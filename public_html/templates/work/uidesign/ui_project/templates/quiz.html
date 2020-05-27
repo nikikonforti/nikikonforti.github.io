@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- JQuery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+
+
+    <style>
+    body{
+        background: rgb(109, 94, 119);
+    }
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        color: black;
+        cursor: grab;
+    }
+    .header{
+        font-size: 40px;
+        text-align: center;
+        padding-top: 50px;
+    }
+    .hide_page{
+        display:none;
+    }
+
+    .next{
+        height: 70px;
+        width: 100px;
+        position:absolute;                  
+        right:0;
+        /* margin-top:-30px;
+        margin-right: -25px;    */
+        transform: rotate(270deg); 
+    }
+    .prev{
+        height: 70px;
+        width: 100px;
+        position:absolute;                  
+        bottom:0;                          
+        left:0;
+        /* margin-bottom: 20px;
+        margin-left: 20px; */
+        transform: rotate(90deg); 
+    }
+    .border{
+        background: rgb(70, 69, 69);
+        margin: 50px;
+        border-color: black;
+        height: 400px;
+    }
+    .stage{
+        font-size: 20px;
+        color: white;
+        padding: 10px;
+    }
+    .listen{
+        height: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .question{
+        width: 502px; 
+        height: 110px; 
+        object-fit: cover;
+        /* position:center; */
+        /* display: block;
+        margin-left: auto;
+        margin-right: auto; */
+    }
+    .block{
+        display: inline-block;
+    }
+    .choice{
+        border: solid black;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        width: 150px;
+        height: 50px;
+        color: rgb(185, 183, 183);
+    }
+    .choice:hover{
+        background:rgb(153, 150, 150);
+        cursor: grab;
+    }
+    .content{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }  
+    .right_choice{
+        border: solid rgb(8, 246, 79);
+    } 
+    .wrong_choice{
+        border: solid rgb(246, 8, 8);
+    }
+    #good{
+        text-align: center;
+        font-weight: bold;
+        padding: 20px;
+        color: rgb(51, 185, 51);
+        font-size: 30px
+    }
+    #bad{
+        text-align: center;
+        font-weight: bold;
+        padding: 20px;
+        color: rgb(230, 50, 59);
+        font-size: 30px
+    }
+    .well{
+        font-size: 20px;
+        text-align: left;
+        padding-left: 150px;
+        padding-top: 50px;
+    }
+    .bad{
+        font-size: 20px;
+        text-align: left;
+        padding-left: 100px;
+        padding-top: 50px;
+    }
+    .spaced_list{
+        border: solid rgb(39, 38, 38);
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .listen:hover{
+        cursor: grab;
+    }
+    .lesson{
+        cursor: grab;
+        color: rgb(12, 12, 12);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 90px;
+        margin-right: 80px;
+        font-size: 30px;
+        background: grey;
+        border-radius: 10px;
+    }
+    .lesson:hover{
+        cursor: grab;
+        background: rgb(83, 82, 82);    
+    }
+    
+    </style>
+</head>
+
+<body>
+    <div class="topnav" alt = "Navigation bar. Go to Home, Lesson, or Quiz">
+        <a class="active" href="/"> Home </a> 
+        <a href="lesson_start">Lesson</a>
+        <a href="quiz">Quiz</a>
+    </div>
+    <div class = "bg"> 
+        <div class="background" alt = "This is the quiz. Take the quiz to see how you have learned the concepts."></div>
+        <div class = "header"> Quiz: Scale identification by ear </div>
+    </div>
+
+    <div class = "border">
+    <div id="Page1">
+        <div class = "stage"> 1/8 </div>
+        <center><div class = "content"> 
+            <img class = "question" src = "https://www.basicmusictheory.com/img/a-minor-scale-on-treble-clef.png">
+            <img class = "listen" id = "Am_nat" src="http://www.pngmart.com/files/3/Play-Button-Transparent-Background.png">
+            <div class = "block">
+                <div class = "choice" id = "maj1"> major </div>
+                <div class = "choice" id = "nat1"> natural minor </div>
+            </div>
+            <div class = "block">
+                <div class = "choice" id = "harm1"> harmonic minor </div>
+                <div class = "choice" id = "mel1"> melodic minor </div>
+            </div>
+        </div></center>
+    </div>
+
+    <div class = "hide_page" id="Page2">
+        <div class = "stage"> 2/8 </div>
+        <center><div class = "content"> 
+            <img class = "question" src = "https://www.basicmusictheory.com/img/a-harmonic-minor-key-signature-on-treble-clef.png">
+            <img class = "listen" id = "Am_harm" src="http://www.pngmart.com/files/3/Play-Button-Transparent-Background.png">
+            <div class = "block">
+                <div class = "choice" id = "maj2"> major </div>
+                <div class = "choice" id = "nat2"> natural minor </div>
+            </div>
+            <div class = "block">
+                <div class = "choice" id = "harm2"> harmonic minor </div>
+                <div class = "choice" id = "mel2"> melodic minor </div>
+            </div>
+        </div></center>
+    </div>
+
+    <div class = "hide_page" id="Page3">
+        <div class = "stage"> 3/8 </div>
+        <center><div class = "content"> 
+            <img class = "question" src = "https://www.basicmusictheory.com/img/c-major-key-signature-on-treble-clef.png">
+            <img class = "listen" id = "C_maj" src="http://www.pngmart.com/files/3/Play-Button-Transparent-Background.png">
+            <div class = "block">
+                <div class = "choice" id = "maj3"> major </div>
+                <div class = "choice" id = "nat3"> natural minor </div>
+            </div>
+            <div class = "block">
+                <div class = "choice" id = "harm3"> harmonic minor </div>
+                <div class = "choice" id = "mel3"> melodic minor </div>
+            </div>
+        </div></center>
+    </div>
+
+    <div class = "hide_page" id="Page4">
+        <div class = "stage"> 4/8 </div>
+        <center><div class = "content"> 
+            <img class = "question" src = "https://www.basicmusictheory.com/img/a-melodic-minor-key-signature-on-treble-clef.png">
+            <img class = "listen" id = "Am_mel" src="http://www.pngmart.com/files/3/Play-Button-Transparent-Background.png">
+            <div class = "block">
+                <div class = "choice" id = "maj4"> major </div>
+                <div class = "choice" id = "nat4"> natural minor </div>
+            </div>
+            <div class = "block">
+                <div class = "choice" id = "harm4"> harmonic minor </div>
+                <div class = "choice" id = "mel4"> melodic minor </div>
+            </div>
+        </div></center>
+    </div>
+
+    <div class = "hide_page" id="Page5">
+        <div class = "stage"> 5/8 </div>
+        <center><div class = "content"> 
+            <img class = "question" src = "https://www.basicmusictheory.com/img/d-major-scale-on-treble-clef.png">
+            <img class = "listen" id = "D_maj" src="http://www.pngmart.com/files/3/Play-Button-Transparent-Background.png">
+            <div class = "block">
+                <div class = "choice" id = "maj5"> major </div>
+                <div class = "choice" id = "nat5"> natural minor </div>
+            </div>
+            <div class = "block">
+                <div class = "choice" id = "harm5"> harmonic minor </div>
+                <div class = "choice" id = "mel5"> melodic minor </div>
+            </div>
+        </div></center>
+    </div>
+
+    <div class = "hide_page" id="Page6">
+        <div class = "stage"> 6/8 </div>
+        <center><div class = "content"> 
+            <img class = "question" src = "https://www.basicmusictheory.com/img/d-minor-scale-on-treble-clef.png">
+            <img class = "listen" id = "Dm_nat" src="http://www.pngmart.com/files/3/Play-Button-Transparent-Background.png">
+            <div class = "block">
+                <div class = "choice" id = "maj6"> major </div>
+                <div class = "choice" id = "nat6"> natural minor </div>
+            </div>
+            <div class = "block">
+                <div class = "choice" id = "harm6"> harmonic minor </div>
+                <div class = "choice" id = "mel6"> melodic minor </div>
+            </div>
+        </div></center>
+    </div>
+
+    <div class = "hide_page" id="Page7">
+        <div class = "stage"> 7/8 </div>
+        <center><div class = "content"> 
+            <img class = "question" src = "https://www.basicmusictheory.com/img/d-harmonic-minor-scale-on-treble-clef.png">
+            <img class = "listen" id = "Dm_harm" src="http://www.pngmart.com/files/3/Play-Button-Transparent-Background.png">
+            <div class = "block">
+                <div class = "choice" id = "maj7"> major </div>
+                <div class = "choice" id = "nat7"> natural minor </div>
+            </div>
+            <div class = "block">
+                <div class = "choice" id = "harm7"> harmonic minor </div>
+                <div class = "choice" id = "mel7"> melodic minor </div>
+            </div>
+        </div></center>
+    </div>
+
+    <div class = "hide_page" id="Page8">
+        <div class = "stage"> 8/8 </div>
+        <center><div class = "content"> 
+            <img class = "question" src = "https://www.basicmusictheory.com/img/d-melodic-minor-scale-on-treble-clef.png">
+            <img class = "listen" id = "Dm_mel" src="http://www.pngmart.com/files/3/Play-Button-Transparent-Background.png">
+            <div class = "block">
+                <div class = "choice" id = "maj8"> major </div>
+                <div class = "choice" id = "nat8"> natural minor </div>
+            </div>
+            <div class = "block">
+                <div class = "choice" id = "harm8"> harmonic minor </div>
+                <div class = "choice" id = "mel8"> melodic minor </div>
+            </div>
+        </div></center>
+    </div>
+    <div class = "hide_page" id="Page9">
+        <div class = "stage"> Quiz results: </div>
+        <div class = "content"> 
+            <div class = "row">
+                <div class = "col-md-6" id = "good"> What you did well: 
+                    <br> <div class = "well"> </div>
+                </div>
+                <div class = "col-md-6" id = "bad"> What you should improve:
+                    <br> <div class = "bad"> </div>
+                </div>
+            </div>
+        </div>
+        <button class = "lesson"> Go back to lesson </button>
+    </div>
+</div>
+</body>
+</html>

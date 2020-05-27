@@ -1,0 +1,310 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+
+<style>
+
+body, html {
+    height: 100%;
+    margin: 0%;
+    background: rgb(190, 188, 188);
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  /* background-color: red; */
+  color: black;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#home">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Lesson 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div> 
+  <a href="#news">Quiz</a>
+
+</div>
+
+</body>
+</html>
+ -->
+
+
+
+
+
+
+ <!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- JQuery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+
+
+    <style>
+
+    body, html {
+        height: 100%;
+        margin: 0%;
+        background: rgb(190, 188, 188);
+    }
+    
+    .header{
+        font-size: 58px;
+        text-align: center;
+        padding-top: 20px;
+        font-weight: bold;
+        color: black;
+    }
+   /* .bg {
+        position: relative;
+        z-index: 1;
+    } */
+
+    .background {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image:url("https://blog.britishmuseum.org/wp-content/uploads/2018/04/xEATW-ID.jpg.pagespeed.ic.-yyeISs7BQ.jpg");
+        opacity: .6;
+        background-repeat: no-repeat;
+        height:645px;
+        display: center;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        color: black;
+        cursor: grab;
+    }
+
+    .searchButton:hover{
+        background-color: grey;
+        cursor: grab;
+        color: black;
+    }
+  
+    .statement{
+        color: rgb(34, 34, 34);
+        opacity: 100%;
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 50px;
+    }
+    .explore{
+        color: black;
+        font-weight: bold;
+        margin-left: 900px;
+        margin-top: 300px;
+        font-size: 30px;
+    }
+    .explore:hover{
+        cursor: grab;
+        color: grey;
+    }
+
+
+
+ 
+
+
+
+
+
+
+    /* a {
+  text-decoration: none;
+} */
+
+
+ul {
+  background: rgb(48, 48, 47);
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+li {
+    color: #fff;
+  background: rgb(49, 49, 49);
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+  transition-duration: 0.5s;
+}
+  
+li a {
+  color: #fff;
+}
+
+li:hover,
+li:focus-within {
+    background: rgb(99, 98, 98);
+    cursor: pointer;
+}
+
+li:focus-within a {
+  outline: none;
+}
+
+ul li ul {
+    /* visibility: hidden; */
+  /* opacity: 0; */
+  /* min-width: 5rem; */
+    /* position: absolute; */
+  /* transition: all 0.5s ease; */
+  /* margin-top: 1rem; */
+    /* left: 0; */
+  display: none;
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus {
+   visibility: visible;
+   /* opacity: 1; */
+   display: block;
+}
+
+ul li ul li {
+    clear: both;
+  width: 100%;
+}
+ 
+    </style>
+</head>
+
+<body>
+    <!-- <div class="topnav" alt = "Navigation bar. Go to Home, Lesson, or Quiz">
+        <a class="active" href="/"> Home </a> 
+        <a class = "lesson_drop" href="lesson_start">Lesson
+        <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </a>
+    </div> -->
+<div>
+    <nav role="navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <!-- <li><a href="#" aria-haspopup="true">Lesson</a> -->
+          <li><a href="lesson_start" >Lesson</a>
+
+          <ul class="dropdown" aria-label="submenu">
+            <li><a href="#">Major</a></li>
+            <li><a href="#">Natural Minor</a></li>
+            <li><a href="#">Harmonic Minor</a></li>
+            <li><a href="#">Melodic Minor</a></li>
+          </ul>
+        </li>
+        <li><a href="quiz">Quiz</a></li>
+      </ul>
+    </nav>
+  </div>
+    <div class = "bg"> 
+        <div class="background" alt = "This is the homepage for our website. Learning music shouldn't be boring. "></div>
+        <div class = "header"> Learning music shouldn't be boring. </div>
+        <center><div class = "statement"> This interactive website helps teach the differences in scales, both with visuals and music. </div></center>
+        <div class = "explore" title = "Below are some lessons."> Explore our lessons here! </div>
+    </div>
+
+</body>
+</html>
