@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- JQuery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+
+
+    <style>
+
+    body, html {
+        height: 100%;
+        margin: 0%;
+        background: rgb(190, 188, 188);
+    }
+    
+    .header{
+        font-size: 58px;
+        text-align: center;
+        padding-top: 20px;
+        font-weight: bold;
+        color: black;
+    }
+    .bg {
+        position: relative;
+        z-index: 1;
+    }
+
+    .background {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image:url("https://blog.britishmuseum.org/wp-content/uploads/2018/04/xEATW-ID.jpg.pagespeed.ic.-yyeISs7BQ.jpg");
+        opacity: .6;
+        background-repeat: no-repeat;
+        height:645px;
+        display: center;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        color: black;
+        cursor: grab;
+    }
+
+    .searchButton:hover{
+        background-color: grey;
+        cursor: grab;
+        color: black;
+    }
+  
+    .statement{
+        color: rgb(34, 34, 34);
+        opacity: 100%;
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 50px;
+    }
+    .explore{
+        color: black;
+        font-weight: bold;
+        margin-left: 900px;
+        margin-top: 300px;
+        font-size: 30px;
+        background: grey;
+        border-radius: 10px;
+        opacity: 0.8;
+    }
+    .explore:hover{
+        cursor: grab;
+        background: rgb(83, 82, 82);
+    }
+
+ 
+    </style>
+</head>
+
+<body>
+    <div class="topnav" alt = "Navigation bar. Go to Home, Lesson, or Quiz">
+        <a class="active" href="/"> Home </a> 
+        <a class = "lesson_drop" href="lesson_start">Lesson  </a>
+        <a href="quiz">Quiz</a>
+    </div>
+    
+    <div class = "bg"> 
+        <div class="background" alt = "This is the homepage for our website. Learning music shouldn't be boring. "></div>
+        <div class = "header"> Learning music shouldn't be boring. </div>
+        <center><div class = "statement"> This interactive website helps teach the differences in scales, both with visuals and music. </div></center>
+        <button class = "explore" title = "Below are some lessons."> Explore our lessons here! </button>
+    </div>
+
+</body>
+</html>
