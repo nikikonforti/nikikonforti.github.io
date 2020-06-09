@@ -7,12 +7,12 @@ updatedPros = None
 current_id = 40
 
 
-@app.route('/poo')
+@app.route('/')
 def home():
    return render_template('index.html') 
 
 #@app.route('/art')
-@app.route('http://www.columbia.edu/~nfk2107/art')
+@app.route('http://www.nikikonforti.com/art')
 def lesson():
     return render_template('art.html') 
 
