@@ -19,11 +19,11 @@ function togglePlay(scale, listen) {
     if (isPlaying) {
       audio[scale].pause()
       audio[scale].currentTime = 0
-      $(listen+"1").attr('src', "http://www.pngmart.com/files/3/Play-Button-Transparent-Background.png");
-      $(listen+"2").attr('src', "http://www.pngmart.com/files/3/Play-Button-Transparent-Background.png");
-      $(listen+"3").attr('src', "http://www.pngmart.com/files/3/Play-Button-Transparent-Background.png");
-      $(listen+"4").attr('src', "http://www.pngmart.com/files/3/Play-Button-Transparent-Background.png");
-      $(listen+"5").attr('src', "http://www.pngmart.com/files/3/Play-Button-Transparent-Background.png");
+      $(listen+"1").attr('src', "https://www.pngmart.com/files/3/Play-Button-Transparent-Background.png");
+      $(listen+"2").attr('src', "https://www.pngmart.com/files/3/Play-Button-Transparent-Background.png");
+      $(listen+"3").attr('src', "https://www.pngmart.com/files/3/Play-Button-Transparent-Background.png");
+      $(listen+"4").attr('src', "https://www.pngmart.com/files/3/Play-Button-Transparent-Background.png");
+      $(listen+"5").attr('src', "https://www.pngmart.com/files/3/Play-Button-Transparent-Background.png");
 
 
     } else {
