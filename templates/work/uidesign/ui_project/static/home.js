@@ -1,6 +1,6 @@
 $(document).ready(function(){
     
     $(".explore").click(function(){      
-        window.location = "/lesson_start";
+        window.location = "/lesson_start.html";
     });
 });
