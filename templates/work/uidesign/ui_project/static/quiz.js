@@ -287,7 +287,7 @@ $(document).ready(function(){
     })
 
     $(".lesson").click(function(){
-        window.location = "/lesson_start";
+        window.location = "/templates/work/uidesign/ui_project/templates/lesson_start.html";
     })
 
 })
