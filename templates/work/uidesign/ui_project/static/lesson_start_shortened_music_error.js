@@ -68,7 +68,7 @@ $(document).ready(function(){
         });
       } );
     $(".quiz").click(function(){
-        window.location = "/quiz";
+        window.location = "/templates/work/uidesign/ui_project/templates/quiz.html";
     });
     
 
