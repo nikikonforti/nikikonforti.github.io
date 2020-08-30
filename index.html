@@ -66,13 +66,13 @@ a{
   text-align: center;
   color: rgb(143, 142, 142);
   width: 400px;
-  height: 600px;
+  height: 500px;
   margin: 20px;
   font-size: 20px;
 }
 #me{
-  height: 600px;
-  width: 600px;
+  height: 500px;
+  width: 500px;
   border: 10px;
 }
 #mail{
@@ -83,11 +83,20 @@ a{
   height: 100px;
   width: 100px;
 }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
 </style>
 
 <body>
     <div class="topnav">
-      <a class="title"> niki konforti </a> 
+      <a class="title" id="follow"> niki konforti </a> 
     </div>
     <div>
       <img id = "me" src="content/nikiphoto.jpg">
@@ -111,7 +120,20 @@ a{
     <!-- <div class="header"> Hi! I'm Niki. </div>
     <div class="aboutme"> I am a recent graduate of Columbia University where I studied Computer Science. I am currently doing a one year software engineering residency program at Google in NYC. I have lived in New York most of my life, and I love finding new things to do in the city. In my free time I paint, draw, and play piano. I also love to swim, bake and cook, and find amazing food in the city.</div> -->
 
-<body>
+  <script>
+    window.onscroll = function() {myFunction()};
+    
+    var header = document.getElementById("follow");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+  </script>
 
 </body>
 </html>         
