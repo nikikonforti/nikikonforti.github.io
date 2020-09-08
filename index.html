@@ -73,7 +73,8 @@ a{
 }
 .about {
   font-size: 20px;
-  padding-left: 50px;
+  padding-left: 550px;
+  margin-right: 100px;
 }
 #me{
   height: 500px;
@@ -87,10 +88,13 @@ a{
 #mail{
   height: 100px;
   width: 100px;
+  margin-left: 50px;
+  margin-top: 50px;
 }
-#github{
+#facebook{
   height: 100px;
   width: 100px;
+  margin-top: 50px;
 }
 .sticky {
   position: fixed;
@@ -123,49 +127,112 @@ span:after {
 }
 
 .header_hello {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
-  margin-left: 50px;
+  padding-left: 550px;
+  margin-top: 35px;
+}
+.dropbtn {
+  background-color: rgb(152, 129, 172);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: inline-block;
+  float: right;
+  width: 200px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #786492;
 }
 </style>
 
 <body>
   <div class = "container">
     <div class="topnav">
-      <a class="title" id="follow"> niki konforti </a> 
-    </div>
-    <ul class = "nav">
+        <div class="row">
+        <a class="title" id="follow"> 
+            niki konforti 
+          </a> 
+          
+        <div class="dropdown">
+            <button class="dropbtn">about</button>
+            <div class="dropdown-content">
+            <a href="templates/art.html">art</a> <br>
+            <a href="templates/resume.html">resume</a> <br>
+            <a href="http://www.github.com/nikikonforti">github</a> <br>
+            <a href="templates/work.html">work</a><br>
+          </div>
+          </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col">
+              <a class="title" id="follow"> 
+                niki konforti 
+              </a> 
+            </div>
+            <div class="col">
+              <div class="dropdown">
+                <button class="dropbtn">about</button>
+                <div class="dropdown-content">
+                <a href="templates/art.html">art</a>
+                <a href="templates/resume.html">resume</a>
+                <a href="http://www.github.com/nikikonforti">github</a>
+                <a href="templates/work.html">work</a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="row">
+          <div class="col">
+            <img id = "me" src="content/nikiphoto.jpg">
+          </div>
+          <div class="col"></div>
+            <div class="header_hello">
+              Hi! I'm Niki. 
+            </div>
+            <div class="about">
+              I am a recent graduate of Columbia University where I studied Computer Science. I am currently doing a one year software engineering residency program at Google in NYC. I have lived in New York most of my life, and I love finding new things to do in the city. In my free time I paint, draw, and play piano. I also love to swim, bake and cook, and find amazing food in the city.
+            </div>
+            <a href="mailto:nfk2107@columbia.edu"><img id="mail" src="content/mailicon.png"></a>
+            <a href="https://www.facebook.com/niki.konforti" target="_blank"><img id="facebook" src="content/facebook.ico"></a><br>
+          </div>
+        </div>
+     <!-- </div> -->
+      <!-- <ul class = "nav">
         <li><a href="http://www.nikikonforti.com">about</a></li>
         <li><a href="templates/art.html">art</a></li>
         <li><a href="templates/resume.html">resume</a></li>
         <li><a href="http://www.github.com/nikikonforti">github</a></li>
 	      <li><a href="templates/work.html">work</a></li>
-    </ul>
-    <!-- <div class = "main_container"> -->
-        <div class="row">
-            <div class="col">
-      <img id = "me" src="content/nikiphoto.jpg">
-      </div>
-      <div class="col"></div>
-      <div class="header_hello">Hi! I'm Niki. </div><br>
-      
-      <div class="about">
-      I am a recent graduate of Columbia University where I studied Computer Science. I am currently doing a one year software engineering residency program at Google in NYC. I have lived in New York most of my life, and I love finding new things to do in the city. In my free time I paint, draw, and play piano. I also love to swim, bake and cook, and find amazing food in the city.
-    </div>
-    </div>
-    </div>
-      <!-- </div> -->
-    
-    <br>
-    <!-- <center><div id="icons">
-        <a href="mailto:nfk2107@columbia.edu"><img id="mail" src="content/mailicon.png"></a>
-        <img id = "me" src="content/nikiphoto.jpg">
-        <a href="https://www.facebook.com/niki.konforti" target="_blank"><img id="github" src="content/facebook.ico"></a><br>
-
-    </div></center> -->
-    <!-- <div class="header"> Hi! I'm Niki. </div>
-    <div class="aboutme"> I am a recent graduate of Columbia University where I studied Computer Science. I am currently doing a one year software engineering residency program at Google in NYC. I have lived in New York most of my life, and I love finding new things to do in the city. In my free time I paint, draw, and play piano. I also love to swim, bake and cook, and find amazing food in the city.</div> -->
-  </div>
+    </ul> -->
   <script>
     window.onscroll = function() {myFunction()};
     
